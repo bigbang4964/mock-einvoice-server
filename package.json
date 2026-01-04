@@ -1,0 +1,27 @@
+{
+  "name": "mock-einvoice-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigbang4964/mock-einvoice-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bigbang4964/mock-einvoice-server/issues"
+  },
+  "homepage": "https://github.com/bigbang4964/mock-einvoice-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.19",
+    "express": "^5.2.1",
+    "uuid": "^13.0.0"
+  }
+}
