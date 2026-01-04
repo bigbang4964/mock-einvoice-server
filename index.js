@@ -21,16 +21,24 @@ app.post("/api/auth/token", (req, res) => {
   const { username, password } = req.body;
 
   if (!username || !password) {
-    return res.status(400).json({
-      success: false,
-      message: "Thiếu tài khoản hoặc mật khẩu",
-    });
+    return res.status(400).json({ message: "Invalid credentials" });
   }
 
   res.json({
-    success: true,
-    accessToken: uuidv4(),
-    expiredAt: dayjs().add(1, "hour").toISOString(),
+    accessToken: "TEST_TOKEN_" + Date.now(),
+    expiredAt: new Date(Date.now() + 3600 * 1000),
+  });
+});
+
+app.post("/api/einvoice/issue", (req, res) => {
+  const body = req.body;
+
+  res.json({
+    InvoiceNo: Math.floor(Math.random() * 900000 + 100000).toString(),
+    TaxAuthorityCode: "TEST-TCT",
+    LookupCode: "TEST-" + Math.random().toString(36).substring(2, 8).toUpperCase(),
+    QRCode: "https://dummyimage.com/300x300/000/fff&text=TEST+QR",
+    RawData: body,
   });
 });
 
